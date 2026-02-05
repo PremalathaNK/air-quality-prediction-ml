@@ -48,6 +48,12 @@ These datasets were merged using the city name as a common attribute.
 8. Analyzed feature importance to identify dominant pollutants
 
 ---
+## Health Risk Classification
+
+In addition to predicting numerical AQI values, this project also classifies air quality into meaningful health risk categories such as **Good**, **Satisfactory**, **Moderate**, **Poor**, and **Very Poor** based on standard AQI guidelines.
+
+This makes the prediction more understandable for general users by directly indicating whether the air quality is safe or potentially harmful, instead of showing only a numeric AQI value.
+
 
 ## Machine Learning Model
 
