@@ -1,126 +1,116 @@
-# Air Quality Prediction and Health Risk Analysis (India)
+# 🌍 Air Quality – Pollution Explorer
 
-Air pollution is a growing concern in Indian cities and has a direct impact on public health.  
-This project focuses on predicting the Air Quality Index (AQI) using machine learning by combining air quality data from multiple sources across major Indian cities.
-
-The goal of the project is not just to build a model, but to understand which pollutants contribute the most to AQI and how such predictions can help in early awareness and decision-making.
+Air pollution affects our daily life and health, especially in cities.  
+This project is a web application that predicts the **Air Quality Index (AQI)** using air pollutant values and shows the **most polluted cities in India**. It also provides **easy-to-understand health advice** based on the AQI level.
 
 ---
 
-## Problem Statement
+## 📌 About the Project
 
-Air Quality Index values depend on multiple pollutants such as PM2.5, PM10, CO, NO₂, SO₂, and O₃.  
-However, air quality data is often scattered across different sources and formats, making analysis difficult.
+Understanding air quality numbers can be confusing for common people.  
+This project solves that by:
 
-This project aims to:
-- Merge air quality data from multiple datasets
-- Clean and preprocess the data
-- Train a machine learning model to predict AQI
-- Analyze the contribution of different pollutants to AQI levels
+- Taking common air pollutant values as input  
+- Predicting the AQI using a machine learning model  
+- Classifying air quality (Good, Moderate, Poor, etc.)  
+- Giving simple health precautions  
+- Displaying cities with the highest average AQI  
 
----
-
-## Datasets Used
-
-Two publicly available datasets were used:
-
-1. **India AQI CSV Datasets (City-wise)**  
-   Source: https://github.com/cp099/India-Air-Quality-Dataset  
-   - Contains daily AQI and pollutant values for cities like Bangalore, Delhi, Mumbai, etc.
-
-2. **AQI India Dataset (Mendeley)**  
-   Source: https://data.mendeley.com/datasets/r6nk22y67y/1  
-   - Provides AQI data along with geographical information (latitude and longitude).
-
-These datasets were merged using the city name as a common attribute.
+The goal is to make air quality information **simple, useful, and practical**.
 
 ---
 
-## Project Workflow
+## ✨ What This Application Does
 
-1. Collected AQI data from multiple sources
-2. Standardized column names and date formats
-3. Merged city-wise CSV files with the Mendeley dataset
-4. Handled missing values using city-wise mean imputation
-5. Selected key pollutant features affecting AQI
-6. Trained a Random Forest Regression model
-7. Evaluated the model using MAE, RMSE, and R² score
-8. Analyzed feature importance to identify dominant pollutants
-
----
-## Health Risk Classification
-
-In addition to predicting numerical AQI values, this project also classifies air quality into meaningful health risk categories such as **Good**, **Satisfactory**, **Moderate**, **Poor**, and **Very Poor** based on standard AQI guidelines.
-
-This makes the prediction more understandable for general users by directly indicating whether the air quality is safe or potentially harmful, instead of showing only a numeric AQI value.
-
-
-## Machine Learning Model
-
-- **Model Used:** Random Forest Regressor  
-- **Input Features:**  
-  - PM2.5  
-  - PM10  
-  - CO  
-  - NO₂  
-  - SO₂  
-  - O₃  
-- **Target Variable:** AQI  
-
-Random Forest was chosen because it handles non-linear relationships well and provides clear feature importance scores.
+- Predicts AQI using 6 air pollutants  
+- Allows only valid and permitted input values  
+- Shows AQI category in clear terms  
+- Displays health advice for each AQI level  
+- Lists the most polluted cities in India  
+- Clean and responsive user interface  
+- Works as a complete frontend + backend project  
 
 ---
 
-## Feature Importance Insight
+## 🧪 Inputs Used
 
-The feature importance analysis shows that pollutants such as **Carbon Monoxide (CO)**, **PM2.5**, and **Ozone (O₃)** play a major role in determining AQI levels across Indian cities.
+The user needs to enter the following values:
 
-This highlights the impact of traffic emissions and fuel combustion on urban air quality.
+- PM2.5 (µg/m³)  
+- PM10 (µg/m³)  
+- CO (mg/m³)  
+- NO₂ (µg/m³)  
+- SO₂ (µg/m³)  
+- O₃ (µg/m³)  
 
-![Feature Importance](data/merged_output/feature_importance.png)
-
----
-
-## Societal Impact
-
-Accurate AQI prediction can:
-- Help people take preventive measures on high pollution days
-- Support early warnings for sensitive groups like children and elderly
-- Assist policymakers in understanding pollution sources
-- Promote awareness about environmental and health risks
+All inputs are validated so that **invalid or unrealistic values are not accepted**.
 
 ---
 
-## Technologies Used
+## 📊 AQI Levels Explained
 
+- **Good** – Safe air quality  
+- **Satisfactory** – Minor breathing discomfort for sensitive people  
+- **Moderate** – Discomfort for people with lung problems  
+- **Poor** – Unhealthy air, avoid outdoor activity  
+- **Very Poor** – Serious health effects  
+- **Severe** – Emergency conditions  
+
+---
+
+## 🩺 Health Advice
+
+Based on the predicted AQI, the application provides **simple health suggestions**, such as:
+
+- Reducing outdoor activities  
+- Wearing masks  
+- Staying indoors for sensitive groups  
+
+This helps users take quick and practical precautions.
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+- HTML  
+- CSS  
+- JavaScript  
+
+### Backend
 - Python  
-- Pandas & NumPy  
+- Flask  
+
+### Machine Learning
+- Random Forest Algorithm  
 - Scikit-learn  
-- Matplotlib  
-- Jupyter Notebook  
-- Visual Studio Code  
+
+### Other Tools
+- Pandas  
+- NumPy  
+- Joblib  
 
 ---
-## Future Scope
-
-This project can be extended to real-time AQI prediction by integrating live air quality sensor data or public APIs.
 
 
-## How to Run the Project
 
-1. Clone the repository
+## ▶️ How to Run the Project
 
-2. Install dependencies:
 ```bash
-   pip install -r requirements.txt
-   ```
-3. Open the notebook:
-   notebooks/merge_datasets.ipynb
+# Step 1: Clone the repository
+git clone https://github.com/PremalathaNK/air-quality-pollution-explorer.git
+cd air-quality-pollution-explorer
 
+# Step 2: Create a virtual environment (optional but recommended)
+python -m venv venv
+venv\Scripts\activate
 
-4. Run the cells step by step
+# Step 3: Install required packages
+pip install -r requirements.txt
 
-**Note**
-The trained model file (.pkl) is intentionally excluded from the repository and can be regenerated by running the notebook.
+# Step 4: Run the application
+python app.py
 
-
+# Step 5: Open in browser
+http://127.0.0.1:5000
+```

@@ -1,5 +1,21 @@
+# Python
 __pycache__/
-.ipynb_checkpoints/
-*.pkl
+*.pyc
+*.pyo
+*.pyd
 .env
+.venv
+env/
 venv/
+
+# Flask
+instance/
+
+# Data files (keep model.pkl)
+*.csv
+*.xlsx
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
