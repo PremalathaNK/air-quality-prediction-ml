@@ -92,7 +92,8 @@ This helps users take quick and practical precautions.
 - Joblib  
 
 ---
-
+## 🚀 Live Demo
+https://air-quality-prediction-ml-t0ia.onrender.com/
 
 
 ## ▶️ How to Run the Project
