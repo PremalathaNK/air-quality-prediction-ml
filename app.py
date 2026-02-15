@@ -287,6 +287,6 @@ def api_pollution():
 
 
 if __name__ == "__main__":
-    # Development server
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
+
 
