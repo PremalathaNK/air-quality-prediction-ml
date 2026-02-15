@@ -79,11 +79,12 @@ This helps users take quick and practical precautions.
 
 ### Backend
 - Python  
-- Flask  
+- Flask (for handling requests and predictions)
+
 
 ### Machine Learning
-- Random Forest Algorithm  
-- Scikit-learn  
+- Random Forest Regressor (for AQI prediction)
+- Scikit-learn
 
 ### Other Tools
 - Pandas  
